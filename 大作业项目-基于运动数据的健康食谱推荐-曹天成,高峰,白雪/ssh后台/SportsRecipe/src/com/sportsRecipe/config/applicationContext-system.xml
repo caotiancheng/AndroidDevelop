@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	
+	<!-- 		用户 部分			-->
+	
+	<!-- DAO定义 -->
+	<!-- <bean id="userDao" class="com.sportsRecipe.dao.UserDao" parent="baseDao" />	 -->
+	
+	<!-- Service定义 -->
+	<!-- <bean id="userService" class="com.sportsRecipe.service.UserService">
+		<property name="userDao">
+			<ref bean="userDao" />
+		</property>
+	</bean> -->
+
+	 <!-- Action 定义 -->
+	 <!-- <bean id="userAction" class="com.sportsRecipe.action.UserAction" scope="prototype">
+		<property name="userService" ref="userService" />
+	</bean> -->
+	
+	<!-- <bean id="loginOutAction" class="com.sportsRecipe.action.LoginOutAction" scope="prototype">
+		
+	</bean> -->
+	
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="configLocation" value="classpath:hibernate.cfg.xml">
+		</property>
+	</bean>
+
+	
+	
+	<!-- 用户登陆 -->
+	<bean id="UserlogininfoDAO" class="com.sportsRecipe.dao.Impl.UserlogininfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userlogininfoService" class="com.sportsRecipe.service.Impl.UserlogininfoServiceImpl">
+		<property name="userlogininfoDao" ref="UserlogininfoDAO"></property>
+	</bean>
+	<bean id="userinfoAction" class="com.sportsRecipe.action.UserinfoAction">
+		<property name="userlogininfoService" ref="userlogininfoService"></property>
+	</bean>
+	
+	<!-- 用户信息 -->
+	<bean id="UserprofileDAO" class="com.sportsRecipe.dao.Impl.UserProfileDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userProfileService" class="com.sportsRecipe.service.Impl.UserProfileServiceImpl">
+		<property name="userProfileDao" ref="UserprofileDAO"></property>
+	</bean>
+	<bean id="userProfileAction" class="com.sportsRecipe.action.UserProfileAction">
+		<property name="userProfileService" ref="userProfileService"></property>
+	</bean>
+	
+	<!-- 用户头像 -->
+    <bean id="UserimgDAO" class="com.sportsRecipe.dao.Impl.UserImgDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userImgService" class="com.sportsRecipe.service.Impl.UserImgServiceImpl">
+		<property name="userImgDao" ref="UserimgDAO"></property>
+	</bean>
+	<bean id="userImgAction" class="com.sportsRecipe.action.UserImgAction">
+		<property name="userImgService" ref="userImgService"></property>
+	</bean>
+	
+	<!-- 运动信息 -->
+    <bean id="SportsinfoDAO" class="com.sportsRecipe.dao.Impl.SportsInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="sportsInfoService" class="com.sportsRecipe.service.Impl.SportsInfoServiceImpl">
+		<property name="sportsInfoDao" ref="SportsinfoDAO"></property>
+	</bean>
+	<bean id="sportsInfoAction" class="com.sportsRecipe.action.SportsInfoAction">
+		<property name="sportsInfoService" ref="sportsInfoService"></property>
+	</bean>
+	
+    <!-- 蔬菜信息 -->
+    <bean id="VegetableinfoDAO" class="com.sportsRecipe.dao.Impl.VegetableInfoDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="vegetableInfoService" class="com.sportsRecipe.service.Impl.VegetableInfoServiceImpl">
+		<property name="vegetableInfoDao" ref="VegetableinfoDAO"></property>
+	</bean>
+	<bean id="vegetableInfoAction" class="com.sportsRecipe.action.VegetableInfoAction">
+		<property name="vegetableInfoService" ref="vegetableInfoService"></property>
+	</bean>
+	
+</beans>

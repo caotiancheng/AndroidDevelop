@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-permission android:name="android.permission.MANAGE_DOCUMENTS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".jerome.gudongfood.view.StartActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_start"
+            android:theme="@style/FullscreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".jerome.gudongfood.view.SportStartActivity" />
+        <activity android:name=".jerome.gudongfood.view.SportResultActivity" />
+        <activity android:name=".jerome.gudongfood.view.MenuListActivity" />
+        <activity
+            android:name=".jerome.gudongfood.view.DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".jerome.gudongfood.view.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".jerome.gudongfood.view.LoginedActivity" />
+        <activity android:name=".jerome.gudongfood.view.EvaluateActivity" />
+        <activity android:name=".jerome.gudongfood.view.MapActivity" />
+        <activity
+            android:name=".jerome.gudongfood.view.UserLoginActivity"
+            android:label="@string/title_activity_user_login" />
+        <activity
+            android:name=".lrving.gudongfood.view.AgeActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name=".lrving.gudongfood.view.AutographActivity" />
+        <activity
+            android:name=".lrving.gudongfood.view.GoalActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name=".lrving.gudongfood.view.HeightActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity
+            android:name=".lrving.gudongfood.view.HobbiesActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name=".lrving.gudongfood.view.MainActivity" />
+        <activity android:name=".lrving.gudongfood.view.NameActivity" />
+        <activity android:name=".lrving.gudongfood.view.PortraitActivity" />
+        <activity android:name=".lrving.gudongfood.view.ProfileActivity" />
+        <activity
+            android:name=".lrving.gudongfood.view.SexActivity"
+            android:theme="@style/MyDialogStyleBottom" />
+        <activity android:name=".jerome.gudongfood.view.UploadResultActivity" />
+        <activity android:name=".jerome.gudongfood.view.ThreeVegetableActivity" />
+        <activity
+            android:name=".jerome.gudongfood.view.VegetableDetailActivity"
+            android:label="@string/title_activity_vegetable_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".jerome.gudongfood.view.StepsActivity"
+            android:label="@string/title_activity_steps"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+    </application>
+
+</manifest>
